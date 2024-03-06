@@ -11,8 +11,8 @@
   box-sizing: border-box;
   border: 1px solid #3D3D3D;
   img {
-    width: 114px;
-    height: 64px;
+    width: 100%;
+    max-width: 114px;
   }
 
   .container-btn {
