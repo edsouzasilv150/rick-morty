@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 1440px;
+  background-color: #1F1F1F;
+  padding-bottom: 200px;
+  box-sizing: border-box;
+
+  .content {
+    width: 100%;
+    max-width: 720px;
+    height: 100%;
+    margin-top: 50px;
+
+    .header {
+      height: 49px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .text {
+        font-family: "Creepster";
+        font-size: 48px;
+        font-weight: 400;
+        color: #00B5CC;
+        text-shadow: 2px 3px #B2DF28;
+      }
+    }
+
+    .cards {
+      margin-top: 15px;
+
+      .card {
+        width: 100%;
+        max-width: 224px;
+        height: 100%;
+        max-height: 298px;
+        margin-top: 50px;
+        box-sizing: border-box;
+      }
+
+      ul {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        gap: 25px;
+
+        li {
+          list-style: none;
+        }
+      }
+    }
+  }
+}
