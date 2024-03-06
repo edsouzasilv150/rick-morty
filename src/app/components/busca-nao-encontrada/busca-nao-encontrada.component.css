@@ -20,7 +20,7 @@
       align-items: center;
       .text {
         font-family: "Creepster";
-        font-size: 48px;
+        font-size: min(48px, 8vw );
         font-weight: 400;
         color: #00B5CC;
         text-shadow: 2px 3px #B2DF28;
@@ -35,7 +35,7 @@
         box-sizing: border-box;
         border-radius: 10px;
         font-family: "Poppins";
-        font-size: 16px;
+        font-size: min(16px 4vw);
         font-weight: 400;
         outline: none;
         background-color: #1F1F1F;;
@@ -56,13 +56,13 @@
       h3 {
         font-family: "Poppins";
         font-weight: 700;
-        font-size: 24px;
+        font-size: min(24px, 6vw);
         color: #FAFAFA;
       }
       p {
         font-family: "Poppins";
         font-weight: 400;
-        font-size: 18px;
+        font-size: min(18px, 4vw);
         color: #A4A4A4;
       }
     }
