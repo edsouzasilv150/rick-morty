@@ -7,6 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './components/home/home.component';
 import { BuscaNaoEncontradaComponent } from './components/busca-nao-encontrada/busca-nao-encontrada.component';
 import { SemFavoritosComponent } from './components/sem-favoritos/sem-favoritos.component';
+import { FavoritosComponent } from './components/favoritos/favoritos.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SemFavoritosComponent } from './components/sem-favoritos/sem-favoritos.
     HeaderComponent,
     HomeComponent,
     BuscaNaoEncontradaComponent,
-    SemFavoritosComponent
+    SemFavoritosComponent,
+    FavoritosComponent
   ],
   imports: [
     BrowserModule,
