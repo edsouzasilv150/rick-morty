@@ -4,7 +4,7 @@
   width: 100%;
   max-width: 1440px;
   background-color: #1F1F1F;
-  padding-bottom: 200px;
+  padding-bottom: 50px;
   box-sizing: border-box;
 
   .content {
@@ -14,22 +14,28 @@
     margin-top: 50px;
 
     .header {
-      height: 49px;
+      /* height: 49px; */
+      height: 98px;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      flex-direction: column;
+      /* justify-content: space-between; */
+      align-items: left;
+      /* align-items: center; */
       .text {
         font-family: "Creepster";
-        font-size: min(48px, 8vw);
+        /* font-size: min(48px, 8vw); */
+        font-size: 25.5px;
         font-weight: 400;
         color: #00B5CC;
         text-shadow: 2px 3px #B2DF28;
+        margin-bottom: 10px;
+        /* margin-left: 10px; */
       }
 
       .pesquisar {
         width: 100%;
-        max-width: 328px;
-        height: 49px;
+        min-width: 296px;
+        height: 40px;
         border: 1px solid #3D3D3D;
         padding: 0 8px 0 8px;
         box-sizing: border-box;
@@ -57,14 +63,36 @@
 
       ul {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         padding: 0;
         margin: 0;
-        gap: 25px;
+        gap: 20px;
 
         li {
           list-style: none;
         }
       }
     }
+  }
+}
+
+@media (min-width: 769px) {
+  .header {
+    display: flex;
+    flex-direction: row !important;
+    height: 49px;
+    justify-content: space-between;
+    align-items: center;
+
+    .text {
+      font-size: min(48px, 8vw) !important;
+    }
+  }
+
+  .pesquisar {
+    width: 100%;
+    max-width: 328px;
+    height: 49px !important;
   }
 }

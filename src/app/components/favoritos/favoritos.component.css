@@ -16,11 +16,14 @@
     .header {
       height: 49px;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      flex-direction: column;
+      /* justify-content: space-between; */
+      /* align-items: center; */
+      align-items: left;
       .text {
         font-family: "Creepster";
-        font-size: 48px;
+        /* font-size: min(48px, 8vw); */
+        font-size: 25.5px;
         font-weight: 400;
         color: #00B5CC;
         text-shadow: 2px 3px #B2DF28;
@@ -41,14 +44,32 @@
 
       ul {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         padding: 0;
         margin: 0;
-        gap: 25px;
+        gap: 20px;
 
         li {
           list-style: none;
         }
       }
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .header {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    .text {
+      font-family: "Creepster";
+      font-size: min(48px, 8vw) !important;
+      font-size: 25.5px;
+      font-weight: 400;
+      color: #00B5CC;
+      text-shadow: 2px 3px #B2DF28;
     }
   }
 }
