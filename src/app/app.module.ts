@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { BuscaNaoEncontradaComponent } from './components/busca-nao-encontrada/busca-nao-encontrada.component';
 import { SemFavoritosComponent } from './components/sem-favoritos/sem-favoritos.component';
 import { FavoritosComponent } from './components/favoritos/favoritos.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FavoritosComponent } from './components/favoritos/favoritos.component';
   ],
   imports: [
     BrowserModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -33,6 +33,7 @@
       height: 40px;
       border-top-left-radius: 8px;
       border-bottom-left-radius: 8px;
+      cursor: pointer;
       img {
         width: 16px;
         height: 16px;
@@ -61,6 +62,7 @@
       background-color: transparent;
       border-top-right-radius: 8px;
       border-bottom-right-radius: 8px;
+      cursor: pointer;
       .favorite {
         width: 16px;
         height: 16px;
