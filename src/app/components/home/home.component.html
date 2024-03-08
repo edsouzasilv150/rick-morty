@@ -2,33 +2,23 @@
   <div class="content">
     <div class="header">
       <span class="text">Início</span>
-      <input class="pesquisar" type="text" placeholder="Pesquisar">
+      <form>
+        <input
+        class="pesquisar"
+        type="text"
+        placeholder="Pesquisar"
+        (input)="search($event)">
+      </form>
+
     </div>
     <div class="cards">
-      <ul>
+      <ul *ngFor="let list of listaPersonagens">
         <li>
           <div class="card">
-            <img src="../../../assets/imgs/rick.png" class="card-img-top" alt="...">
+            <img [src]="list.image" class="img-cards" alt="Imagem de cada Personagem">
             <div class="card-body">
-              <p class="card-text">Some quick example text to build</p>
-            </div>
-          </div>
-        </li>
-
-        <li>
-          <div class="card">
-            <img src="../../../assets/imgs/rick.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">Some quick example text to build</p>
-            </div>
-          </div>
-        </li>
-
-        <li>
-          <div class="card">
-            <img src="../../../assets/imgs/rick.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">Some quick example text to build </p>
+              <p class="name-text">{{ list.name }}</p>
+              <p class="specie-text">{{ list.species }}</p>
             </div>
           </div>
         </li>

@@ -14,25 +14,20 @@
     margin-top: 50px;
 
     .header {
-      /* height: 49px; */
       height: 98px;
       display: flex;
       flex-direction: column;
-      /* justify-content: space-between; */
       align-items: left;
-      /* align-items: center; */
       .text {
         font-family: "Creepster";
-        /* font-size: min(48px, 8vw); */
         font-size: 25.5px;
         font-weight: 400;
         color: #00B5CC;
         text-shadow: 2px 3px #B2DF28;
         margin-bottom: 10px;
-        /* margin-left: 10px; */
       }
 
-      .pesquisar {
+     form > .pesquisar {
         width: 100%;
         min-width: 296px;
         height: 40px;
@@ -50,30 +45,79 @@
     }
 
     .cards {
+      display: flex;
+      flex-direction: column;
       margin-top: 15px;
+      gap: 24px !important;
 
       .card {
         width: 100%;
         max-width: 224px;
         height: 100%;
-        max-height: 298px;
+        max-height: 346px;
         margin-top: 50px;
         box-sizing: border-box;
+        border-radius: 15px;
+
+
+
+        .img-cards {
+          width: 100%;
+          height: 100%px;
+          border-top-left-radius: 15px;
+          border-top-right-radius: 15px;
+        }
+
+        .card-body {
+          width: 222px;
+          height: 72px;
+          background-color: #000;
+          padding: 10px 20px 10px 20px;
+          box-sizing: border-box;
+          border-bottom-left-radius: 15px;
+          border-bottom-right-radius: 15px;
+        }
+
+        .name-text {
+          font-family: "Creepster";
+          font-size: 24px;
+          font-weight: 400;
+          color: #F2F2F2;
+          margin-bottom: 0;
+        }
+
+        .specie-text {
+          font-family: "Poppins";
+          font-size: 16px;
+          font-weight: 400;
+          color: #A4A4A4;
+          margin-bottom: 0;
+        }
       }
 
       ul {
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: row !important;
+        gap: 24px;
         padding: 0;
         margin: 0;
-        gap: 20px;
 
         li {
           list-style: none;
         }
       }
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .cards, ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row !important;
+    gap: 24px;
   }
 }
 
@@ -90,9 +134,16 @@
     }
   }
 
-  .pesquisar {
+  form >.pesquisar {
     width: 100%;
     max-width: 328px;
     height: 49px !important;
+  }
+
+  .cards, ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row !important;
+    gap: 24px;
   }
 }
