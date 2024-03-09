@@ -27,15 +27,6 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  // search(e: Event): void {
-  //   const target = e.target as HTMLInputElement;
-  //   const value = target.value;
-
-  //   this.listaPersonagens = this.personagemSearch.filter((personagem) => {
-  //     return personagem.name.toLocaleLowerCase().includes(value);
-  //   });
-  // }
-
   search(e: Event): void {
     const target = e.target as HTMLInputElement;
     const value = target.value;
