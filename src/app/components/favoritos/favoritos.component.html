@@ -5,29 +5,16 @@
     </div>
     <div class="cards">
       <ul>
-        <li>
+        <li *ngFor="let favoriteCharacter of favoriteCharacters">
           <div class="card">
-            <img src="../../../assets/imgs/rick.png" class="card-img-top" alt="...">
+            <img [src]="favoriteCharacter.image"
+             class="img-cards"
+             alt="Imagem de cada Personagem"
+             (click)="removerFavorito(favoriteCharacter)"
+             >
             <div class="card-body">
-              <p class="card-text">Some quick example text to build</p>
-            </div>
-          </div>
-        </li>
-
-        <li>
-          <div class="card">
-            <img src="../../../assets/imgs/rick.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">Some quick example text to build</p>
-            </div>
-          </div>
-        </li>
-
-        <li>
-          <div class="card">
-            <img src="../../../assets/imgs/rick.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">Some quick example text to build </p>
+              <p class="name-text">{{ favoriteCharacter.name }}</p>
+              <p class="specie-text">{{ favoriteCharacter.species }}</p>
             </div>
           </div>
         </li>

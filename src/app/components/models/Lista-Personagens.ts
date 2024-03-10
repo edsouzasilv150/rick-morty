@@ -9,17 +9,12 @@ export interface ApiResponse {
   results: ListaPersonagen[];
 }
 
-export interface FavoriteCharacters {
-  id: number,
-  name: string,
-  favorited: boolean
-}
-
 export interface ListaPersonagen {
   id: number;
   name: string;
   status: string;
   species: string;
+  favorited: boolean;
   type: string;
   gender: string;
   origin: {

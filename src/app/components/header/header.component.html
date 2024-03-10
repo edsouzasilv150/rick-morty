@@ -8,7 +8,7 @@
     <div routerLink="favoritos" class="btn-favorite">
       <img class="favorite" src="../../../assets/imgs/heart.svg" alt="Icon Favorite">
       <span>Favoritos</span>
-      <span class="badge text-bg-light rounded-circle">4</span>
+      <span class="badge text-bg-light rounded-circle">{{ favoritosCount$ | async }}</span>
     </div>
   </div>
 </div>

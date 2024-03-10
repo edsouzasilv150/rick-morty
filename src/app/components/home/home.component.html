@@ -12,15 +12,20 @@
 
     </div>
     <div class="cards">
-      <ul *ngFor="let list of listaPersonagens">
-        <li>
+      <ul>
+        <li *ngFor="let list of listaPersonagens">
           <div class="card">
-            <img [src]="list.image" class="img-cards" alt="Imagem de cada Personagem">
+            <img
+              [src]="list.image"
+              class="img-cards"
+              alt="Imagem de cada Personagem"
+              (click)="adicionarFavorito(list)">
             <div class="card-body">
               <p class="name-text">{{ list.name }}</p>
               <p class="specie-text">{{ list.species }}</p>
             </div>
           </div>
+          <span *ngIf="isFavorito(list) | async">Favorito</span>
         </li>
       </ul>
     </div>

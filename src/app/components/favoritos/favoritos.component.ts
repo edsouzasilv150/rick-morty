@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { ListaPersonagen } from '../models/Lista-Personagens';
 import { FavoriteCharactersService } from 'src/app/services/favorite-characters.service';
 
 
@@ -8,13 +11,24 @@ import { FavoriteCharactersService } from 'src/app/services/favorite-characters.
   styleUrls: ['./favoritos.component.css']
 })
 export class FavoritosComponent implements OnInit {
+  @Input() favoriteCharacters: ListaPersonagen[] = [];
 
-  constructor(private favoriteCharactersService: FavoriteCharactersService ) { }
+  constructor(private favoritecharacterService: FavoriteCharactersService, private router: Router) { }
 
   ngOnInit(): void {
-    this.favoriteCharactersService.getCharacters().subscribe(resp => {
-      console.log(resp + 'chegou aqui no componente')
+    this.favoritecharacterService.favoritos$.subscribe(favoritos => {
+      this.favoriteCharacters = favoritos;
+
+      if (this.favoriteCharacters.length === 0) {
+        this.router.navigate(['/sem-favorito']);
+      }
     });
   }
 
+  removerFavorito(personagem: ListaPersonagen): void {
+    this.favoritecharacterService.removerFavorito(personagem);
+    const favoritos = this.favoritecharacterService.obterFavoritos();
+    const totalFavoritos = favoritos.length;
+    this.favoritecharacterService.atualizarContadorFavoritos(totalFavoritos);
+  }
 }

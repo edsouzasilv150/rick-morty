@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 
 import { ListaPersonagen } from '../models/Lista-Personagens';
 import { ListCharactersService } from 'src/app/services/list-characters.service';
+import { FavoriteCharactersService } from '../../services/favorite-characters.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +17,7 @@ export class HomeComponent implements OnInit {
   personagemSearch: ListaPersonagen[] = [];
 
   constructor(private listCharactersService: ListCharactersService,
+    private favoritecharacterService: FavoriteCharactersService,
     private router: Router) {}
 
   ngOnInit(): void {
@@ -38,6 +41,17 @@ export class HomeComponent implements OnInit {
     if (this.listaPersonagens.length === 0) {
       this.router.navigate(['/nao-encontrado']);
     }
+  }
+
+  adicionarFavorito(personagem: ListaPersonagen): void {
+    this.favoritecharacterService.adicionarFavorito(personagem);
+    const favoritos = this.favoritecharacterService.obterFavoritos();
+    const totalFavoritos = favoritos.length;
+    this.favoritecharacterService.atualizarContadorFavoritos(totalFavoritos);
+  }
+
+  isFavorito(personagem: ListaPersonagen): Observable<boolean> {
+    return this.favoritecharacterService.isFavorito(personagem);
   }
 }
 
